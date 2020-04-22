@@ -24,12 +24,15 @@ print(data)
 #clear和implictitly_wait()为智能等待，time.sleep()为固定等待
 #time.sleep()为等待固定时间，
 #driver.implicitly.wait()为在一个时间范围内等待
+#WebDriverWait等待10秒钟等待元素"乃万_百度百科"被加载出来，每隔500ms扫描一次
+
 #driver.find_element_by_id("kw").send_keys("虞书欣")
 time.sleep(8)
 driver.find_element_by_id("kw").clear()
 driver.find_element_by_id("kw").send_keys("乃万")
 driver.find_element_by_id("su").submit() #可以用submit代替click
 
+#WebDriverWait(driver, 10).until(lambda driver:driver.find_element_by_id("乃万_百度百科"))
 driver.implicitly_wait(10)
 driver.find_element_by_link_text("乃万_百度百科").click()
 
